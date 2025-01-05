@@ -13,7 +13,7 @@
     <title>Frontend Mentor | FAQ accordion</title>
   </head>
   <body>
-    <picture>
+    <picture role="img">
       <source
         media="(min-width: 650px)"
         srcset="./assets/images/background-pattern-desktop.svg"
@@ -25,17 +25,22 @@
       <img
         src="./assets/images/background-pattern-mobile.svg"
         alt="a purple background with pattern"
+        role="img"
       />
     </picture>
-    <main class="page-layout">
+    <main class="page-layout" role="main">
       <section>
-        <header class="faq-header">
-          <img src="./assets/images/icon-star.svg" class="faq-icon" />
+        <header class="faq-header" role="heading">
+          <img
+            src="./assets/images/icon-star.svg"
+            class="faq-icon"
+            alt="Star icon"
+          />
           <span class="faq-title">FAQs</span>
         </header>
 
         <div class="faq-accordion">
-          <details>
+          <details role="">
             <summary>What is Frontend Mentor, and how will it help me?</summary>
             <p class="faq-answer">
               Frontend Mentor offers realistic coding challenges to help
