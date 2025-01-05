@@ -9,21 +9,34 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style/styles.css" />
     <title>Frontend Mentor | FAQ accordion</title>
   </head>
   <body>
+    <picture>
+      <source
+        media="(min-width: 650px)"
+        srcset="./assets/images/background-pattern-desktop.svg"
+      />
+      <source
+        media="(min-width: 465px)"
+        srcset="./assets/images/background-pattern-mobile.svg"
+      />
+      <img
+        src="./assets/images/background-pattern-mobile.svg"
+        alt="a purple background with pattern"
+      />
+    </picture>
     <main class="page-layout">
-      <header class="faq-header">
-        <img src="./assets/images/icon-star.svg" class="faq-icon" />
-        <h1 class="faq-title">FAQs</h1>
-      </header>
-      <section class="faq-section">
+      <section>
+        <header class="faq-header">
+          <img src="./assets/images/icon-star.svg" class="faq-icon" />
+          <span class="faq-title">FAQs</span>
+        </header>
+
         <div class="faq-accordion">
-          <details class="faq-item">
-            <summary class="faq-question">
-              What is Frontend Mentor, and how will it help me?
-            </summary>
+          <details>
+            <summary>What is Frontend Mentor, and how will it help me?</summary>
             <p class="faq-answer">
               Frontend Mentor offers realistic coding challenges to help
               developers improve their frontend coding skills with projects in
@@ -31,16 +44,16 @@
               for portfolio building.
             </p>
           </details>
-          <details class="faq-item">
-            <summary class="faq-question">Is Frontend Mentor free?</summary>
+          <details>
+            <summary>Is Frontend Mentor free?</summary>
             <p class="faq-answer">
               Yes, Frontend Mentor offers both free and premium coding
               challenges, with the free option providing access to a range of
               projects suitable for all skill levels.
             </p>
           </details>
-          <details class="faq-item">
-            <summary class="faq-question">
+          <details>
+            <summary>
               Can I use Frontend Mentor projects in my portfolio?
             </summary>
             <p class="faq-answer">
@@ -49,8 +62,8 @@
               potential employers!
             </p>
           </details>
-          <details class="faq-item">
-            <summary class="faq-question">
+          <details>
+            <summary>
               How can I get help if I'm stuck on a Frontend Mentor challenge?
             </summary>
             <p class="faq-answer">

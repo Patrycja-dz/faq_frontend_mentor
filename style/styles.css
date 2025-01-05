@@ -1,0 +1,196 @@
+@font-face {
+  font-family: "WorkSans";
+  src: url("../assets/fonts/static/WorkSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
+@font-face {
+  font-family: "WorkSans";
+  src: url("../assets/fonts/static/WorkSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
+@font-face {
+  font-family: "WorkSans";
+  src: url("../assets/fonts/static/WorkSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-stretch: 75% 125%;
+  font-display: swap;
+}
+
+:root {
+  interpolate-size: allow-keywords;
+  --light-100: hsl(0, 0%, 100%);
+  --light-300: hsl(275, 100%, 97%);
+  --grayish-purple: hsl(292, 16%, 49%);
+  --dark-purple: hsl(292, 42%, 14%);
+  --pink: #ad28eb;
+  --border-color-light: hsl(260, 100%, 95%);
+  --border-color-dark: hsl(260, 100%, 80%);
+  --border-radius: 16px;
+  --padding: 1rem;
+  --font-family: "WorkSans", sans-serif;
+  --font-weight-reg: 400;
+  --base-font-size: 1.4rem;
+  --font-size-summary: clamp(1rem, 2vw, 1.125rem);
+  --font-size-paragraph: clamp(0.875rem, 1.8vw, 1rem);
+  --line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  display: block;
+  object-fit: cover;
+}
+
+picture img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  line-height: var(--line-height);
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-reg);
+  font-size: var(--base-font-size);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--grayish-purple);
+}
+
+.page-layout {
+  background-color: var(--light-100);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  margin-inline: 20px;
+}
+
+details {
+  overflow: hidden;
+  max-width: min(65ch, 525px);
+  margin-inline: auto;
+  border-bottom: 1px solid var(--border-color-light);
+}
+
+details {
+  overflow: hidden;
+  max-width: min(65ch, 525px);
+  margin-inline: auto;
+  border-bottom: 1px solid var(--border-color-light);
+}
+
+details::details-content {
+  font-size: 1.125rem;
+  block-size: 0;
+  transition: block-size 1s, content-visibility 1s;
+  transition-behavior: allow-discrete;
+}
+details[open]::details-content {
+  block-size: auto;
+}
+
+details * {
+  margin: 0;
+}
+
+details[open]::details-content {
+  block-size: auto;
+}
+
+details * {
+  margin: 0;
+}
+
+details > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: var(--font-size-summary);
+  font-family: "WorkSans", sans-serif;
+  font-weight: 600;
+  margin-block: 1.125rem;
+  color: var(--dark-purple);
+}
+
+details > summary:hover {
+  background-image: linear-gradient(
+    to right,
+    #54b3d6,
+    var(--grayish-purple),
+    var(--pink) 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 1s ease-in-out;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details > summary::before {
+  content: "";
+}
+
+summary::after {
+  content: url("../assets/images/icon-plus.svg");
+  margin-left: auto;
+}
+
+details[open] summary:after {
+  content: url("../assets/images/icon-minus.svg");
+  margin-left: auto;
+}
+
+details > p {
+  padding-block: var(--padding);
+  font-size: var(--font-size-paragraph);
+}
+
+details[open] {
+  border-bottom: 1px solid var(--border-color-dark);
+}
+
+.faq-header {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-header);
+  font-family: "WorkSans", sans-serif;
+  font-weight: 700;
+}
+
+.faq-accordion {
+  max-width: 40rem;
+  margin: auto;
+}
